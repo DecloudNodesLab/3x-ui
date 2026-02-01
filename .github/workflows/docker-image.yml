@@ -28,9 +28,9 @@ jobs:
       - name: Build Docker image
         run: |
           docker build . \
-            -t ghcr.io/${{ github.repository_owner }}/3x_ui:latest
+            -t ghcr.io/${{ github.repository_owner }}/3xui:latest
 
       - name: Push Docker image
         run: |
-          docker push ghcr.io/${{ github.repository_owner }}/3x_ui:latest
+          docker push ghcr.io/${{ github.repository_owner }}/3xui:latest
 
