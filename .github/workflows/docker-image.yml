@@ -29,8 +29,8 @@ jobs:
       - name: Build image
         run: |
           docker build . \
-            -t ghcr.io/${IMAGE_REPO}/3x-ui:latest
+            -t ghcr.io/${IMAGE_REPO}:latest
 
       - name: Push image
         run: |
-          docker push ghcr.io/${IMAGE_REPO}/3x-ui:latest
+          docker push ghcr.io/${IMAGE_REPO}:latest
