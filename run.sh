@@ -6,3 +6,4 @@ fi
 if [ -n "$ARG" ]; then
 ./x-ui setting $ARG
 fi
+./x-ui
