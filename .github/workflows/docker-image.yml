@@ -13,22 +13,24 @@ jobs:
       packages: write
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Log in to GitHub Container Registry
+      - name: Set lowercase repo
+        run: |
+          echo "IMAGE_REPO=${GITHUB_REPOSITORY,,}" >> $GITHUB_ENV
+
+      - name: Login to GHCR
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build Docker image
+      - name: Build image
         run: |
           docker build . \
-            -t ghcr.io/declab/3x-ui:latest
+            -t ghcr.io/${IMAGE_REPO}/3x-ui:latest
 
-      - name: Push Docker image
+      - name: Push image
         run: |
-          docker push ghcr.io/declab/3x-ui:latest
-
+          docker push ghcr.io/${IMAGE_REPO}/3x-ui:latest
