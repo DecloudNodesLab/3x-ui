@@ -3,16 +3,14 @@ name: Docker Image CI
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: read
-      packages: write   # ⬅ ОБЯЗАТЕЛЬНО для GHCR
+permissions:
+  contents: read
+  packages: write
 
     steps:
       - name: Checkout repo
