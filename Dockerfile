@@ -11,4 +11,5 @@ RUN tar -xzvf x-ui-linux-amd64.tar.gz
 RUN rm -r x-ui-linux-amd64.tar.gz
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 WORKDIR /x-ui
+EXPOSE 1010 1011 1111 80
 CMD ["/run.sh"]
