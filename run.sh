@@ -1,5 +1,4 @@
 #!/bin/bash
-mv ./x-ui /usr/bin/x-ui
 if [ -n "$DB" ]; then
 mkdir -p /etc/x-ui/
 wget -O /etc/x-ui/x-ui.db $DB
